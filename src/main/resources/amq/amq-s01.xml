@@ -45,7 +45,8 @@
 			</networkConnector>
 		</networkConnectors>
 		<transportConnectors>
-			<transportConnector name="clients" uri="tcp://localhost:61624" />
+			<transportConnector name="clients"
+				uri="tcp://localhost:61624"/>
 		</transportConnectors>
 	</broker>
 </beans>

@@ -3,6 +3,7 @@ package com.redhat.empowered;
 
 import java.io.File;
 import java.net.URI;
+import java.net.URISyntaxException;
 
 import org.apache.activemq.broker.Broker;
 import org.apache.activemq.broker.BrokerFactory;
@@ -55,16 +56,34 @@ public class TestAMQNetwork extends CamelSpringTestSupport {
 		FileSystemUtils.deleteRecursively(new File("amq-s01-store"));
 	}
 
-	@Test
-	public void nominalSend1000Msg() throws Exception {
-
+	private void setupNominal() throws URISyntaxException, Exception, InterruptedException {
 		amqStarter = new AMQStarter();
 		amqStarter.setup();
 		amqStarter.noJmx();
 		amqStarter.startMasters();
 		//wait for instances to fire up
 		amqStarter.waitUntilMastersStarted();
+		Thread.sleep(5000);
+	}
+	
+	private void setupSingle() throws URISyntaxException, Exception, InterruptedException {
+		amqStarter = new AMQStarter();
+		amqStarter.setup();
+		amqStarter.noJmx();
+		amqStarter.getAmqc02master().start();
+		amqStarter.getAmqs01().start();
+		//wait for instances to fire up
+		amqStarter.getAmqc02master().waitUntilStarted();
+		amqStarter.getAmqs01().waitUntilStarted();
 
+		Thread.sleep(3000);
+	}
+	
+	@Test
+	public void nominalSend1000Msg() throws Exception {
+
+		setupNominal();
+		
 		context.addRoutes(new RouteBuilder() {
 			@Override
 			public void configure() throws Exception {
@@ -80,11 +99,12 @@ public class TestAMQNetwork extends CamelSpringTestSupport {
 		totalCollector.setExpectedMessageCount(1000);
 		// For now, let's just wait for some messages// TODO Add some expectations here
 		logger.info("Start Sending 1000 messages");
-		String message = "Hello World Message!";
-		Thread.sleep(15000);
+		Thread.sleep(5000);
 		logConnections(amqStarter.getAmqs01().getBroker());
 		logConnections(amqStarter.getAmqc01master().getBroker());
 		logConnections(amqStarter.getAmqc02master().getBroker());
+		String message = "Hello World Message!";
+
 		for (int i = 0; i < 1000; i++) {
 			inputEndpoint.sendBody(message);
 		}
@@ -104,17 +124,12 @@ public class TestAMQNetwork extends CamelSpringTestSupport {
 	}
 
 
+
 	@Test
 	public void scaleDown() throws Exception {
 
-
-		amqStarter = new AMQStarter();
-		amqStarter.setup();
-		amqStarter.noJmx();
-		amqStarter.startMasters();
-		//wait for instances to fire up
-		amqStarter.waitUntilMastersStarted();
-
+		setupNominal();
+		
 		context.addRoutes(new RouteBuilder() {
 			@Override
 			public void configure() throws Exception {
@@ -130,7 +145,7 @@ public class TestAMQNetwork extends CamelSpringTestSupport {
 		totalCollector.setMinimumExpectedMessageCount(1000);
 		// For now, let's just wait for some messages// TODO Add some expectations here
 		logger.info("Start Sending 1000 messages");
-		Thread.sleep(15000);
+		Thread.sleep(5000);
 		logConnections(amqStarter.getAmqs01().getBroker());
 		logConnections(amqStarter.getAmqc01master().getBroker());
 		logConnections(amqStarter.getAmqc02master().getBroker());
@@ -169,15 +184,9 @@ public class TestAMQNetwork extends CamelSpringTestSupport {
 	@Test
 	public void onlyOneCentral() throws Exception {
 
-		amqStarter = new AMQStarter();
-		amqStarter.setup();
-		amqStarter.noJmx();
-		amqStarter.getAmqc02master().start();
-		amqStarter.getAmqs01().start();
-		//wait for instances to fire up
-		amqStarter.getAmqc02master().waitUntilStarted();
-		amqStarter.getAmqs01().waitUntilStarted();
+		setupSingle();
 
+		
 		context.addRoutes(new RouteBuilder() {
 			@Override
 			public void configure() throws Exception {
@@ -193,7 +202,7 @@ public class TestAMQNetwork extends CamelSpringTestSupport {
 		totalCollector.setExpectedMessageCount(1000);
 		// For now, let's just wait for some messages// TODO Add some expectations here
 		logger.info("Start Sending 1000 messages");
-		Thread.sleep(15000);
+		Thread.sleep(5000);
 		logConnections(amqStarter.getAmqs01().getBroker());
 		logConnections(amqStarter.getAmqc02master().getBroker());
 		String message = "Hello World Message!";
@@ -213,17 +222,12 @@ public class TestAMQNetwork extends CamelSpringTestSupport {
 		assertMockEndpointsSatisfied();
 	}
 
+
+
 	@Test
 	public void scaleUp() throws Exception {
 
-		amqStarter = new AMQStarter();
-		amqStarter.setupSingle();
-		amqStarter.noJmxSingle();
-		amqStarter.getAmqc02master().start();
-		amqStarter.getAmqs01().start();
-		//wait for instances to fire up
-		amqStarter.getAmqc02master().waitUntilStarted();
-		amqStarter.getAmqs01().waitUntilStarted();
+		setupSingle();
 
 		context.addRoutes(new RouteBuilder() {
 			@Override
@@ -240,7 +244,7 @@ public class TestAMQNetwork extends CamelSpringTestSupport {
 		totalCollector.setExpectedMessageCount(1000);
 		// For now, let's just wait for some messages// TODO Add some expectations here
 		logger.info("Start Sending 1000 messages");
-		Thread.sleep(15000);
+		Thread.sleep(5000);
 		logConnections(amqStarter.getAmqs01().getBroker());
 		logConnections(amqStarter.getAmqc02master().getBroker());
 		String message = "Hello World Message!";
