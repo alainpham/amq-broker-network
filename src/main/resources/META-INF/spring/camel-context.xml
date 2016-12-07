@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configures the Camel Context -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="  http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd     http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd  ">
+	<bean class="org.apache.camel.spring.spi.BridgePropertyPlaceholderConfigurer"
+		id="props">
+		<property name="ignoreResourceNotFound" value="true" />
+		<property name="locations">
+			<list>
+				<value>classpath:app.properties</value>
+				<value>file:app.properties</value>
+				<value>file:${karaf.home}/etc/app.properties</value>
+				<value>file:etc/app.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- connection to central 01-->
+	<bean class="org.apache.activemq.ActiveMQConnectionFactory" id="c01-jmsConnectionFactory">
+		<property name="brokerURL" value="failover:(tcp://localhost:61620,tcp://localhost:61621,tcp://localhost:61622,tcp://localhost:61623)?randomize=false" />
+		<property name="userName" value="admin" />
+		<property name="password" value="admin" />
+	</bean>
+	<bean class="org.apache.activemq.pool.PooledConnectionFactory"
+		destroy-method="stop" id="c01-pooledConnectionFactory">
+		<property name="connectionFactory" ref="c01-jmsConnectionFactory" />
+		<property name="maxConnections" value="1" />
+	</bean>
+	<bean class="org.apache.camel.component.jms.JmsConfiguration" id="c01-jmsConfig">
+		<property name="connectionFactory" ref="c01-pooledConnectionFactory" />
+		<property name="concurrentConsumers" value="1" />
+	</bean>
+
+	<bean class="org.apache.activemq.camel.component.ActiveMQComponent"
+		id="c01-activemq">
+		<property name="configuration" ref="c01-jmsConfig" />
+	</bean>
+
+	<!-- connection to central 02-->
+	<bean class="org.apache.activemq.ActiveMQConnectionFactory" id="c02-jmsConnectionFactory">
+		<property name="brokerURL" value="failover:(tcp://localhost:61620,tcp://localhost:61621,tcp://localhost:61622,tcp://localhost:61623)?randomize=false" />
+		<property name="userName" value="admin" />
+		<property name="password" value="admin" />
+	</bean>
+	<bean class="org.apache.activemq.pool.PooledConnectionFactory"
+		destroy-method="stop" id="c02-pooledConnectionFactory">
+		<property name="connectionFactory" ref="c02-jmsConnectionFactory" />
+		<property name="maxConnections" value="1" />
+	</bean>
+	<bean class="org.apache.camel.component.jms.JmsConfiguration" id="c02-jmsConfig">
+		<property name="connectionFactory" ref="c02-pooledConnectionFactory" />
+		<property name="concurrentConsumers" value="1" />
+	</bean>
+
+	<bean class="org.apache.activemq.camel.component.ActiveMQComponent"
+		id="c02-activemq">
+		<property name="configuration" ref="c02-jmsConfig" />
+	</bean>
+
+	<!-- ################ connection to s01 -->
+	<bean class="org.apache.activemq.ActiveMQConnectionFactory" id="s01-jmsConnectionFactory">
+		<property name="brokerURL" value="failover:(tcp://localhost:61624)" />
+		<property name="userName" value="admin" />
+		<property name="password" value="admin" />
+	</bean>
+	<bean class="org.apache.activemq.pool.PooledConnectionFactory"
+		destroy-method="stop" id="s01-pooledConnectionFactory">
+		<property name="connectionFactory" ref="s01-jmsConnectionFactory" />
+		<property name="maxConnections" value="1" />
+	</bean>
+	<bean class="org.apache.camel.component.jms.JmsConfiguration" id="s01-jmsConfig">
+		<property name="connectionFactory" ref="s01-pooledConnectionFactory" />
+		<property name="concurrentConsumers" value="1" />
+	</bean>
+
+	<bean class="org.apache.activemq.camel.component.ActiveMQComponent"
+		id="s01-activemq">
+		<property name="configuration" ref="s01-jmsConfig" />
+	</bean>
+
+	<camelContext id="amq-broker-network" xmlns="http://camel.apache.org/schema/spring">
+		<route id="aliveLoggerRoute">
+			<from id="aliveLoggerStarter" uri="timer:foo?period=20000" />
+			<log id="logAlive" message="Hello I'm alive.." />
+		</route>
+	</camelContext>
+</beans>

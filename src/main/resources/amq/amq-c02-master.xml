@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd">
+
+	<broker xmlns="http://activemq.apache.org/schema/core"
+		xsi:schemaLocation="http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd"
+		brokerId="amq-c02-master" brokerName="amq-c02-master" dataDirectory="amq-c02-store"
+		start="false">
+
+		<managementContext>
+			<managementContext createConnector="false" />
+		</managementContext>
+		<destinationPolicy>
+			<policyMap>
+				<policyEntries>
+					<policyEntry queue="sensor.events" queuePrefetch="1">
+						<networkBridgeFilterFactory>
+							<conditionalNetworkBridgeFilterFactory
+								replayDelay="1000" replayWhenNoConsumers="true" />
+						</networkBridgeFilterFactory>
+					</policyEntry>
+				</policyEntries>
+			</policyMap>
+		</destinationPolicy>
+		<persistenceAdapter>
+			<kahaDB directory="amq-c02-store/kahadb" lockKeepAlivePeriod="5000">
+				<locker>
+					<shared-file-locker lockAcquireSleepInterval="10000" />
+				</locker>
+			</kahaDB>
+		</persistenceAdapter>
+		<networkConnectors>
+			<networkConnector decreaseNetworkConsumerPriority="true"
+				name="linkToCentral" networkTTL="-1" prefetchSize="1"
+				suppressDuplicateQueueSubscriptions="true" duplex="false"
+				uri="masterslave:(tcp://localhost:61620,tcp://localhost:61621)">
+				<dynamicallyIncludedDestinations>
+					<queue physicalName="sensor.events" />
+				</dynamicallyIncludedDestinations>
+				<excludedDestinations>
+					<topic physicalName=">" />
+				</excludedDestinations>
+			</networkConnector>
+		</networkConnectors>
+		<transportConnectors>
+			<transportConnector name="clients"
+				rebalanceClusterClients="true" updateClusterClients="true"
+				updateClusterClientsOnRemove="true" updateClusterFilter="amq-c.*"
+				uri="tcp://localhost:61622" />
+		</transportConnectors>
+	</broker>
+</beans>
