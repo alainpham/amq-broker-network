@@ -29,7 +29,7 @@
 		<networkConnectors>
 			<networkConnector decreaseNetworkConsumerPriority="true"
 				name="linkToCentral01" networkTTL="-1" prefetchSize="1"
-				suppressDuplicateQueueSubscriptions="true" duplex="false"
+				suppressDuplicateQueueSubscriptions="true" duplex="false" conduitSubscriptions="false"
 				uri="masterslave:(tcp://localhost:61620,tcp://localhost:61621)">
 				<dynamicallyIncludedDestinations>
 					<queue physicalName="sensor.events" />
@@ -37,7 +37,7 @@
 			</networkConnector>
 			<networkConnector decreaseNetworkConsumerPriority="true"
 				name="linkToCentral02" networkTTL="-1" prefetchSize="1"
-				suppressDuplicateQueueSubscriptions="true" duplex="false"
+				suppressDuplicateQueueSubscriptions="true" duplex="false" conduitSubscriptions="false"
 				uri="masterslave:(tcp://localhost:61622,tcp://localhost:61623)">
 				<dynamicallyIncludedDestinations>
 					<queue physicalName="sensor.events" />
