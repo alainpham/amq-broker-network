@@ -1,0 +1,928 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building amq-broker-network 1.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ amq-broker-network ---
+[INFO] Deleting /home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ amq-broker-network ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ amq-broker-network ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:testResources (default-testResources) @ amq-broker-network ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ amq-broker-network ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ amq-broker-network ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.redhat.empowered.TestAMQNetwork
+[                          main] TestAMQNetwork                 INFO  ********************************************************************************
+[                          main] TestAMQNetwork                 INFO  Testing: scaleDown(com.redhat.empowered.TestAMQNetwork)
+[                          main] TestAMQNetwork                 INFO  ********************************************************************************
+[                          main] ClassPathXmlApplicationContext INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4973813a: startup date [Wed Dec 07 14:06:34 CET 2016]; root of context hierarchy
+[                          main] XmlBeanDefinitionReader        INFO  Loading XML bean definitions from class path resource [META-INF/spring/camel-context.xml]
+[                          main] DefaultListableBeanFactory     INFO  Overriding bean definition for bean 'aliveLoggerStarter': replacing [Generic bean: class [org.apache.camel.spring.CamelEndpointFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelEndpointFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+[                          main] ePropertyPlaceholderConfigurer INFO  Loading properties file from class path resource [app.properties]
+[                          main] ePropertyPlaceholderConfigurer INFO  Loading properties file from URL [file:app.properties]
+[                          main] ePropertyPlaceholderConfigurer WARN  Could not load properties from URL [file:app.properties]: app.properties (No such file or directory)
+[                          main] ePropertyPlaceholderConfigurer INFO  Loading properties file from URL [file:${karaf.home}/etc/app.properties]
+[                          main] ePropertyPlaceholderConfigurer WARN  Could not load properties from URL [file:${karaf.home}/etc/app.properties]: ${karaf.home}/etc/app.properties (No such file or directory)
+[                          main] ePropertyPlaceholderConfigurer INFO  Loading properties file from URL [file:etc/app.properties]
+[                          main] ePropertyPlaceholderConfigurer WARN  Could not load properties from URL [file:etc/app.properties]: etc/app.properties (No such file or directory)
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6c0d7c83: defining beans [props,c01-jmsConnectionFactory,c01-pooledConnectionFactory,c01-jmsConfig,c01-activemq,c02-jmsConnectionFactory,c02-pooledConnectionFactory,c02-jmsConfig,c02-activemq,s01-jmsConnectionFactory,s01-pooledConnectionFactory,s01-jmsConfig,s01-activemq,aliveLoggerStarter,template,consumerTemplate,amq-broker-network:beanPostProcessor,amq-broker-network]; root of factory hierarchy
+[                          main] CamelContextFactoryBean        INFO  Bridging Camel and Spring property placeholder configurer with id: props
+[                          main] DefaultTypeConverter           INFO  Loaded 215 type converters
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) is starting
+[                          main] ManagedManagementStrategy      INFO  JMX is enabled
+[                          main] DefaultRuntimeEndpointRegistry INFO  Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000)
+[                          main] SpringCamelContext             INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+[                          main] SpringCamelContext             INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+[                          main] SpringCamelContext             INFO  Route: aliveLoggerRoute started and consuming from: Endpoint[timer://foo?period=20000]
+[                          main] SpringCamelContext             INFO  Total 1 routes, of which 1 are started.
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) started in 0.177 seconds
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@29caf222: startup date [Wed Dec 07 14:06:36 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c01-master.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6759f091: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@602c4656: startup date [Wed Dec 07 14:06:36 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c02-master.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2caf6912: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@759d81f3: startup date [Wed Dec 07 14:06:36 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c01-slave.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6a714237: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@2d0bfb24: startup date [Wed Dec 07 14:06:36 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c02-slave.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@43cf6ea3: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@5ecba515: startup date [Wed Dec 07 14:06:36 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-s01.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4a29f290: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] BrokerService                  INFO  Using Persistence Adapter: KahaDBPersistenceAdapter[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c01-store/kahadb]
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c01-store/amq-c01-master/tmp_storage] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) is starting
+[                          main] TransportServerThreadSupport   INFO  Listening for connections at: tcp://localhost:61620
+[                          main] TransportConnector             INFO  Connector clients started
+[                          main] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c01-master?async=false&create=false to failover:(tcp://localhost:61622,tcp://localhost:61623)?randomize=false&maxReconnectAttempts=0
+[                          main] TransportConnector             INFO  Connector vm://amq-c01-master started
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral:BrokerService[amq-c01-master] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) started
+[                          main] BrokerService                  INFO  For help or more information please see: http://activemq.apache.org
+[                          main] BrokerService                  INFO  Using Persistence Adapter: KahaDBPersistenceAdapter[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c02-store/kahadb]
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61622, tcp://localhost:61623] after: 1 attempt(s)
+[lBroker= vm://amq-c01-master#0] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c01-master#0 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[Service[amq-c01-master] Task-2] TransportConnector             INFO  Connector vm://amq-c01-master stopped
+[Service[amq-c01-master] Task-2] DemandForwardingBridgeSupport  INFO  amq-c01-master bridge to Unknown stopped
+[twork) thread #0 - timer://foo] aliveLoggerRoute               INFO  Hello I'm alive..
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c02-store/amq-c02-master/tmp_storage] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) is starting
+[                          main] TransportServerThreadSupport   INFO  Listening for connections at: tcp://localhost:61622
+[                          main] TransportConnector             INFO  Connector clients started
+[                          main] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c02-master?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[                          main] TransportConnector             INFO  Connector vm://amq-c02-master started
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral:BrokerService[amq-c02-master] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) started
+[                          main] BrokerService                  INFO  For help or more information please see: http://activemq.apache.org
+[                          main] BrokerService                  INFO  Using Persistence Adapter: KahaDBPersistenceAdapter[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-s01-store/kahadb]
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61620
+[lBroker= vm://amq-c02-master#2] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c02-master#2 and tcp://localhost:61620 (amq-c01-master) has been established.
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-s01-store/amq-s01/tmp_storage] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) is starting
+[                          main] TransportServerThreadSupport   INFO  Listening for connections at: tcp://localhost:61624
+[                          main] TransportConnector             INFO  Connector clients started
+[                          main] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[                          main] TransportConnector             INFO  Connector vm://amq-s01 started
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral01:BrokerService[amq-s01] started
+[                          main] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61622,tcp://localhost:61623)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61620
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral02:BrokerService[amq-s01] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) started
+[                          main] BrokerService                  INFO  For help or more information please see: http://activemq.apache.org
+[d, localBroker= vm://amq-s01#4] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#4 and tcp://localhost:61620 (amq-c01-master) has been established.
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61622
+[d, localBroker= vm://amq-s01#6] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#6 and tcp://localhost:61622 (amq-c02-master) has been established.
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c01-master?async=false&create=false to failover:(tcp://localhost:61622,tcp://localhost:61623)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] TransportConnector             INFO  Connector vm://amq-c01-master started
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61622
+[lBroker= vm://amq-c01-master#8] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c01-master#8 and tcp://localhost:61622 (amq-c02-master) has been established.
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61620
+[: tcp:///127.0.0.1:57458@61620] Transport                      WARN  Transport Connection to: tcp://127.0.0.1:57458 failed: java.io.EOFException
+[               ActiveMQ Task-2] FailoverTransport              INFO  Successfully reconnected to tcp://localhost:61622
+[                          main] SpringCamelContext             INFO  Route: route1 started and consuming from: Endpoint[c01-activemq://queue:sensor.events]
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61620
+[                          main] SpringCamelContext             INFO  Route: route2 started and consuming from: Endpoint[c02-activemq://queue:sensor.events]
+[                          main] TestAMQNetwork                 INFO  Start Sending 1000 messages
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-s01 : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-13:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-11:1
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-c01-master : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-13:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-11:1
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-c02-master : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-11:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-13:1
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61624
+[                          main] TestAMQNetwork                 INFO  ############### before scaleDown #########################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  Received on collector01 250
+[                          main] TestAMQNetwork                 INFO  Received on collector02 250
+[                          main] TestAMQNetwork                 INFO  Total received 500
+[                          main] TestAMQNetwork                 INFO  amqs01 enqueue 500
+[                          main] TestAMQNetwork                 INFO  amqs01 dequeue 500
+[                          main] TestAMQNetwork                 INFO  amqs01 dispatch 500
+[                          main] TestAMQNetwork                 INFO  amqc01master enqueue 250
+[                          main] TestAMQNetwork                 INFO  amqc01master dequeue 250
+[                          main] TestAMQNetwork                 INFO  amqc01master dispatch 250
+[                          main] TestAMQNetwork                 INFO  amqc02master enqueue 250
+[                          main] TestAMQNetwork                 INFO  amqc02master dequeue 250
+[                          main] TestAMQNetwork                 INFO  amqc02master dispatch 250
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-s01 : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-13:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-11:1
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-c01-master : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-13:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-11:1
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-c02-master : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-11:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-13:1
+[ocalhost/127.0.0.1:61620@57446] FailoverTransport              WARN  Transport (tcp://localhost:61620) failed , not attempting to automatically reconnect: java.io.EOFException
+[ocalhost/127.0.0.1:61620@57446] DemandForwardingBridgeSupport  WARN  Network connection between vm://amq-c02-master#2 and unconnected shutdown due to a remote error: java.io.EOFException
+[ocalhost/127.0.0.1:61620@57450] FailoverTransport              WARN  Transport (tcp://localhost:61620) failed , not attempting to automatically reconnect: java.io.EOFException
+[ocalhost/127.0.0.1:61620@57450] DemandForwardingBridgeSupport  WARN  Network connection between vm://amq-s01#4 and unconnected shutdown due to a remote error: java.io.EOFException
+[ocalhost/127.0.0.1:61620@57462] FailoverTransport              WARN  Transport (tcp://localhost:61620) failed , attempting to automatically reconnect: java.io.EOFException
+[ BrokerService[amq-s01] Task-3] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to amq-c01-master stopped
+[                          main] TransportConnector             INFO  Connector clients stopped
+[Service[amq-c02-master] Task-2] TransportConnector             INFO  Connector vm://amq-c02-master stopped
+[Service[amq-c02-master] Task-2] DemandForwardingBridgeSupport  INFO  amq-c02-master bridge to amq-c01-master stopped
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully reconnected to tcp://localhost:61622
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c02-master?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] TransportConnector             INFO  Connector vm://amq-c02-master started
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[Broker= vm://amq-c02-master#10] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c02-master#10 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[Service[amq-c02-master] Task-4] TransportConnector             INFO  Connector vm://amq-c02-master stopped
+[Service[amq-c02-master] Task-4] DemandForwardingBridgeSupport  INFO  amq-c02-master bridge to Unknown stopped
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[, localBroker= vm://amq-s01#12] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#12 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[ BrokerService[amq-s01] Task-3] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to Unknown stopped
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c02-master?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] TransportConnector             INFO  Connector vm://amq-c02-master started
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[Broker= vm://amq-c02-master#14] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c02-master#14 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[Service[amq-c02-master] Task-1] TransportConnector             INFO  Connector vm://amq-c02-master stopped
+[, localBroker= vm://amq-s01#16] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#16 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[Service[amq-c02-master] Task-1] DemandForwardingBridgeSupport  INFO  amq-c02-master bridge to Unknown stopped
+[ BrokerService[amq-s01] Task-4] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to Unknown stopped
+[twork) thread #0 - timer://foo] aliveLoggerRoute               INFO  Hello I'm alive..
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c02-master?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] TransportConnector             INFO  Connector vm://amq-c02-master started
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[Broker= vm://amq-c02-master#18] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c02-master#18 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[Service[amq-c02-master] Task-4] TransportConnector             INFO  Connector vm://amq-c02-master stopped
+[Service[amq-c02-master] Task-4] DemandForwardingBridgeSupport  INFO  amq-c02-master bridge to Unknown stopped
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[, localBroker= vm://amq-s01#20] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#20 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[ BrokerService[amq-s01] Task-1] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to Unknown stopped
+[                          main] TestAMQNetwork                 INFO  ############### scaleDown #########################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  Received on collector01 501
+[                          main] TestAMQNetwork                 INFO  Received on collector02 499
+[                          main] TestAMQNetwork                 INFO  Total received 1000
+[                          main] TestAMQNetwork                 INFO  amqs01 enqueue 1000
+[                          main] TestAMQNetwork                 INFO  amqs01 dequeue 1000
+[                          main] TestAMQNetwork                 INFO  amqs01 dispatch 1000
+[                          main] TestAMQNetwork                 INFO  amqc01master enqueue 250
+[                          main] TestAMQNetwork                 INFO  amqc01master dequeue 250
+[                          main] TestAMQNetwork                 INFO  amqc01master dispatch 250
+[                          main] TestAMQNetwork                 INFO  amqc02master enqueue 750
+[                          main] TestAMQNetwork                 INFO  amqc02master dequeue 750
+[                          main] TestAMQNetwork                 INFO  amqc02master dispatch 750
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-s01 : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-13:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-11:1
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-c01-master : 1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-11:1
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-c02-master : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-11:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-13:1
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) is shutting down
+[: tcp:///127.0.0.1:37148@61622] Transport                      WARN  Transport Connection to: tcp://127.0.0.1:37148 failed: java.io.EOFException
+[                          main] Transport                      WARN  Transport Connection to: vm://amq-c01-master#8 failed: org.apache.activemq.transport.TransportDisposedIOException: peer (vm://amq-c01-master#8) stopped.
+[                          main] TransportConnector             INFO  Connector vm://amq-c01-master stopped
+[                          main] DemandForwardingBridgeSupport  INFO  amq-c01-master bridge to amq-c02-master stopped
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral:BrokerService[amq-c01-master] stopped
+[                          main] TransportConnector             INFO  Connector clients stopped
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c01-store/amq-c01-master/tmp_storage] stopped
+[                          main] KahaDBStore                    INFO  Stopping async queue tasks
+[                          main] KahaDBStore                    INFO  Stopping async topic tasks
+[                          main] KahaDBStore                    INFO  Stopped KahaDB
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) uptime 28.581 seconds
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) is shutdown
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) is shutting down
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral:BrokerService[amq-c02-master] stopped
+[ocalhost/127.0.0.1:61622@37146] FailoverTransport              WARN  Transport (tcp://localhost:61622) failed , not attempting to automatically reconnect: java.io.EOFException
+[ocalhost/127.0.0.1:61622@37146] DemandForwardingBridgeSupport  WARN  Network connection between vm://amq-s01#6 and unconnected shutdown due to a remote error: java.io.EOFException
+[ocalhost/127.0.0.1:61622@37154] FailoverTransport              WARN  Transport (tcp://localhost:61622) failed , attempting to automatically reconnect: java.io.EOFException
+[ BrokerService[amq-s01] Task-1] TransportConnector             INFO  Connector vm://amq-s01 stopped
+[ BrokerService[amq-s01] Task-1] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to amq-c02-master stopped
+[ocalhost/127.0.0.1:61622@37178] FailoverTransport              WARN  Transport (tcp://localhost:61622) failed , attempting to automatically reconnect: java.io.EOFException
+[                          main] TransportConnector             INFO  Connector clients stopped
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c02-store/amq-c02-master/tmp_storage] stopped
+[                          main] KahaDBStore                    INFO  Stopping async queue tasks
+[                          main] KahaDBStore                    INFO  Stopping async topic tasks
+[                          main] KahaDBStore                    INFO  Stopped KahaDB
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) uptime 28.240 seconds
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) is shutdown
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) is shutting down
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral01:BrokerService[amq-s01] stopped
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral02:BrokerService[amq-s01] stopped
+[                          main] TransportConnector             INFO  Connector clients stopped
+[ocalhost/127.0.0.1:61624@60738] FailoverTransport              WARN  Transport (tcp://localhost:61624) failed , attempting to automatically reconnect: java.io.EOFException
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-s01-store/amq-s01/tmp_storage] stopped
+[                          main] KahaDBStore                    INFO  Stopping async queue tasks
+[                          main] KahaDBStore                    INFO  Stopping async topic tasks
+[                          main] KahaDBStore                    INFO  Stopped KahaDB
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) uptime 28.061 seconds
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) is shutdown
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://collector01] is satisfied
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://collector02] is satisfied
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://totalCollector] is satisfied
+[                          main] TestAMQNetwork                 INFO  ********************************************************************************
+[                          main] TestAMQNetwork                 INFO  Testing done: scaleDown(com.redhat.empowered.TestAMQNetwork)
+[                          main] TestAMQNetwork                 INFO  Took: 29.157 seconds (29157 millis)
+[                          main] TestAMQNetwork                 INFO  ********************************************************************************
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) is shutting down
+[                          main] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 3 routes (timeout 10 seconds)
+[work) thread #3 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: aliveLoggerRoute shutdown complete, was consuming from: Endpoint[timer://foo?period=20000]
+[work) thread #3 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route2 shutdown complete, was consuming from: Endpoint[c02-activemq://queue:sensor.events]
+[work) thread #3 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route1 shutdown complete, was consuming from: Endpoint[c01-activemq://queue:sensor.events]
+[                          main] DefaultShutdownStrategy        INFO  Graceful shutdown of 3 routes completed in 0 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) uptime 30.219 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) is shutdown in 0.876 seconds
+[                          main] ClassPathXmlApplicationContext INFO  Closing org.springframework.context.support.ClassPathXmlApplicationContext@4973813a: startup date [Wed Dec 07 14:06:34 CET 2016]; root of context hierarchy
+[                          main] DefaultListableBeanFactory     INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6c0d7c83: defining beans [props,c01-jmsConnectionFactory,c01-pooledConnectionFactory,c01-jmsConfig,c01-activemq,c02-jmsConnectionFactory,c02-pooledConnectionFactory,c02-jmsConfig,c02-activemq,s01-jmsConnectionFactory,s01-pooledConnectionFactory,s01-jmsConfig,s01-activemq,aliveLoggerStarter,template,consumerTemplate,amq-broker-network:beanPostProcessor,amq-broker-network]; root of factory hierarchy
+[                          main] TestAMQNetwork                 INFO  Deleting data store folder ...
+[                          main] TestAMQNetwork                 INFO  ********************************************************************************
+[                          main] TestAMQNetwork                 INFO  Testing: onlyOneCentral(com.redhat.empowered.TestAMQNetwork)
+[                          main] TestAMQNetwork                 INFO  ********************************************************************************
+[                          main] ClassPathXmlApplicationContext INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5c10285a: startup date [Wed Dec 07 14:07:06 CET 2016]; root of context hierarchy
+[                          main] XmlBeanDefinitionReader        INFO  Loading XML bean definitions from class path resource [META-INF/spring/camel-context.xml]
+[                          main] DefaultListableBeanFactory     INFO  Overriding bean definition for bean 'aliveLoggerStarter': replacing [Generic bean: class [org.apache.camel.spring.CamelEndpointFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelEndpointFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+[                          main] ePropertyPlaceholderConfigurer INFO  Loading properties file from class path resource [app.properties]
+[                          main] ePropertyPlaceholderConfigurer INFO  Loading properties file from URL [file:app.properties]
+[                          main] ePropertyPlaceholderConfigurer WARN  Could not load properties from URL [file:app.properties]: app.properties (No such file or directory)
+[                          main] ePropertyPlaceholderConfigurer INFO  Loading properties file from URL [file:${karaf.home}/etc/app.properties]
+[                          main] ePropertyPlaceholderConfigurer WARN  Could not load properties from URL [file:${karaf.home}/etc/app.properties]: ${karaf.home}/etc/app.properties (No such file or directory)
+[                          main] ePropertyPlaceholderConfigurer INFO  Loading properties file from URL [file:etc/app.properties]
+[                          main] ePropertyPlaceholderConfigurer WARN  Could not load properties from URL [file:etc/app.properties]: etc/app.properties (No such file or directory)
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@747d1932: defining beans [props,c01-jmsConnectionFactory,c01-pooledConnectionFactory,c01-jmsConfig,c01-activemq,c02-jmsConnectionFactory,c02-pooledConnectionFactory,c02-jmsConfig,c02-activemq,s01-jmsConnectionFactory,s01-pooledConnectionFactory,s01-jmsConfig,s01-activemq,aliveLoggerStarter,template,consumerTemplate,amq-broker-network:beanPostProcessor,amq-broker-network]; root of factory hierarchy
+[                          main] CamelContextFactoryBean        INFO  Bridging Camel and Spring property placeholder configurer with id: props
+[                          main] DefaultTypeConverter           INFO  Loaded 215 type converters
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) is starting
+[                          main] DefaultManagementStrategy      INFO  JMX is disabled
+[                          main] SpringCamelContext             INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+[                          main] SpringCamelContext             INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+[                          main] SpringCamelContext             INFO  Route: aliveLoggerRoute started and consuming from: Endpoint[timer://foo?period=20000]
+[                          main] SpringCamelContext             INFO  Total 1 routes, of which 1 are started.
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) started in 0.004 seconds
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@3c782d8e: startup date [Wed Dec 07 14:07:06 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c01-master.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1b4ae4e0: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@3baf6936: startup date [Wed Dec 07 14:07:06 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c02-master.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@63411512: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@2eadc9f6: startup date [Wed Dec 07 14:07:06 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c01-slave.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2e807c54: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@27df0f3d: startup date [Wed Dec 07 14:07:06 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c02-slave.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3eda0aeb: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@716e431d: startup date [Wed Dec 07 14:07:06 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-s01.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@eca6a74: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] BrokerService                  INFO  Using Persistence Adapter: KahaDBPersistenceAdapter[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c02-store/kahadb]
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c02-store/amq-c02-master/tmp_storage] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) is starting
+[                          main] TransportServerThreadSupport   INFO  Listening for connections at: tcp://localhost:61622
+[                          main] TransportConnector             INFO  Connector clients started
+[                          main] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c02-master?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[                          main] TransportConnector             INFO  Connector vm://amq-c02-master started
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral:BrokerService[amq-c02-master] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) started
+[                          main] BrokerService                  INFO  For help or more information please see: http://activemq.apache.org
+[                          main] BrokerService                  INFO  Using Persistence Adapter: KahaDBPersistenceAdapter[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-s01-store/kahadb]
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[Broker= vm://amq-c02-master#22] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c02-master#22 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[Service[amq-c02-master] Task-2] TransportConnector             INFO  Connector vm://amq-c02-master stopped
+[Service[amq-c02-master] Task-2] DemandForwardingBridgeSupport  INFO  amq-c02-master bridge to Unknown stopped
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-s01-store/amq-s01/tmp_storage] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) is starting
+[                          main] TransportServerThreadSupport   INFO  Listening for connections at: tcp://localhost:61624
+[                          main] TransportConnector             INFO  Connector clients started
+[                          main] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[                          main] TransportConnector             INFO  Connector vm://amq-s01 started
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral01:BrokerService[amq-s01] started
+[                          main] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61622,tcp://localhost:61623)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral02:BrokerService[amq-s01] started
+[, localBroker= vm://amq-s01#24] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#24 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) started
+[                          main] BrokerService                  INFO  For help or more information please see: http://activemq.apache.org
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61622
+[ BrokerService[amq-s01] Task-4] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to Unknown stopped
+[, localBroker= vm://amq-s01#26] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#26 and tcp://localhost:61622 (amq-c02-master) has been established.
+[twork) thread #4 - timer://foo] aliveLoggerRoute               INFO  Hello I'm alive..
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c02-master?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] TransportConnector             INFO  Connector vm://amq-c02-master started
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[Broker= vm://amq-c02-master#28] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c02-master#28 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[Service[amq-c02-master] Task-1] TransportConnector             INFO  Connector vm://amq-c02-master stopped
+[Service[amq-c02-master] Task-1] DemandForwardingBridgeSupport  INFO  amq-c02-master bridge to Unknown stopped
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[, localBroker= vm://amq-s01#30] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#30 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[ BrokerService[amq-s01] Task-2] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to Unknown stopped
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c02-master?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] TransportConnector             INFO  Connector vm://amq-c02-master started
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[Broker= vm://amq-c02-master#32] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c02-master#32 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[Service[amq-c02-master] Task-2] TransportConnector             INFO  Connector vm://amq-c02-master stopped
+[Service[amq-c02-master] Task-2] DemandForwardingBridgeSupport  INFO  amq-c02-master bridge to Unknown stopped
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61622
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[, localBroker= vm://amq-s01#34] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#34 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[ BrokerService[amq-s01] Task-4] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to Unknown stopped
+[                          main] SpringCamelContext             INFO  Route: route3 started and consuming from: Endpoint[c01-activemq://queue:sensor.events]
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61622
+[                          main] SpringCamelContext             INFO  Route: route4 started and consuming from: Endpoint[c02-activemq://queue:sensor.events]
+[                          main] TestAMQNetwork                 INFO  Start Sending 1000 messages
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c02-master?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] TransportConnector             INFO  Connector vm://amq-c02-master started
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[Broker= vm://amq-c02-master#36] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c02-master#36 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[Service[amq-c02-master] Task-3] TransportConnector             INFO  Connector vm://amq-c02-master stopped
+[Service[amq-c02-master] Task-3] DemandForwardingBridgeSupport  INFO  amq-c02-master bridge to Unknown stopped
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[, localBroker= vm://amq-s01#38] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#38 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[ BrokerService[amq-s01] Task-2] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to Unknown stopped
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-s01 : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-30:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-33:1
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-c02-master : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-30:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-33:1
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61624
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c02-master?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] TransportConnector             INFO  Connector vm://amq-c02-master started
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[Broker= vm://amq-c02-master#40] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c02-master#40 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[Service[amq-c02-master] Task-4] TransportConnector             INFO  Connector vm://amq-c02-master stopped
+[Service[amq-c02-master] Task-4] DemandForwardingBridgeSupport  INFO  amq-c02-master bridge to Unknown stopped
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[, localBroker= vm://amq-s01#42] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#42 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[ BrokerService[amq-s01] Task-2] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to Unknown stopped
+[twork) thread #4 - timer://foo] aliveLoggerRoute               INFO  Hello I'm alive..
+[                          main] TestAMQNetwork                 INFO  ############### onlyOneCentral #########################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  Received on collector01 500
+[                          main] TestAMQNetwork                 INFO  Received on collector02 500
+[                          main] TestAMQNetwork                 INFO  Total received 1000
+[                          main] TestAMQNetwork                 INFO  amqs01 enqueue 1000
+[                          main] TestAMQNetwork                 INFO  amqs01 dequeue 1000
+[                          main] TestAMQNetwork                 INFO  amqs01 dispatch 1000
+[                          main] TestAMQNetwork                 INFO  amqc02master enqueue 1000
+[                          main] TestAMQNetwork                 INFO  amqc02master dequeue 1000
+[                          main] TestAMQNetwork                 INFO  amqc02master dispatch 1000
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-s01 : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-30:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-33:1
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-c02-master : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-30:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-33:1
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) is shutting down
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral:BrokerService[amq-c01-master] stopped
+[                          main] TransportConnector             INFO  Connector clients stopped
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c01-store/amq-c01-master/tmp_storage] stopped
+[                          main] KahaDBStore                    INFO  Stopping async queue tasks
+[                          main] KahaDBStore                    INFO  Stopping async topic tasks
+[                          main] KahaDBStore                    INFO  Stopped KahaDB
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) is shutdown
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) is shutting down
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral:BrokerService[amq-c02-master] stopped
+[ocalhost/127.0.0.1:61622@37354] FailoverTransport              WARN  Transport (tcp://localhost:61622) failed , not attempting to automatically reconnect: java.io.EOFException
+[ocalhost/127.0.0.1:61622@37354] DemandForwardingBridgeSupport  WARN  Network connection between vm://amq-s01#26 and unconnected shutdown due to a remote error: java.io.EOFException
+[ocalhost/127.0.0.1:61622@37374] FailoverTransport              WARN  Transport (tcp://localhost:61622) failed , attempting to automatically reconnect: java.io.EOFException
+[ BrokerService[amq-s01] Task-3] TransportConnector             INFO  Connector vm://amq-s01 stopped
+[ BrokerService[amq-s01] Task-3] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to amq-c02-master stopped
+[ocalhost/127.0.0.1:61622@37384] FailoverTransport              WARN  Transport (tcp://localhost:61622) failed , attempting to automatically reconnect: java.io.EOFException
+[                          main] TransportConnector             INFO  Connector clients stopped
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c02-store/amq-c02-master/tmp_storage] stopped
+[                          main] KahaDBStore                    INFO  Stopping async queue tasks
+[                          main] KahaDBStore                    INFO  Stopping async topic tasks
+[                          main] KahaDBStore                    INFO  Stopped KahaDB
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) uptime 26.273 seconds
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) is shutdown
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) is shutting down
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral01:BrokerService[amq-s01] stopped
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral02:BrokerService[amq-s01] stopped
+[ocalhost/127.0.0.1:61624@60960] FailoverTransport              WARN  Transport (tcp://localhost:61624) failed , attempting to automatically reconnect: java.io.EOFException
+[                          main] TransportConnector             INFO  Connector clients stopped
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-s01-store/amq-s01/tmp_storage] stopped
+[                          main] KahaDBStore                    INFO  Stopping async queue tasks
+[                          main] KahaDBStore                    INFO  Stopping async topic tasks
+[                          main] KahaDBStore                    INFO  Stopped KahaDB
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) uptime 26.149 seconds
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) is shutdown
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://collector01] is satisfied
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://collector02] is satisfied
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://totalCollector] is satisfied
+[                          main] TestAMQNetwork                 INFO  ********************************************************************************
+[                          main] TestAMQNetwork                 INFO  Testing done: onlyOneCentral(com.redhat.empowered.TestAMQNetwork)
+[                          main] TestAMQNetwork                 INFO  Took: 26.563 seconds (26563 millis)
+[                          main] TestAMQNetwork                 INFO  ********************************************************************************
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) is shutting down
+[                          main] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 3 routes (timeout 10 seconds)
+[work) thread #7 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: aliveLoggerRoute shutdown complete, was consuming from: Endpoint[timer://foo?period=20000]
+[work) thread #7 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route4 shutdown complete, was consuming from: Endpoint[c02-activemq://queue:sensor.events]
+[work) thread #7 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route3 shutdown complete, was consuming from: Endpoint[c01-activemq://queue:sensor.events]
+[                          main] DefaultShutdownStrategy        INFO  Graceful shutdown of 3 routes completed in 0 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) uptime 27.484 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) is shutdown in 0.917 seconds
+[                          main] ClassPathXmlApplicationContext INFO  Closing org.springframework.context.support.ClassPathXmlApplicationContext@5c10285a: startup date [Wed Dec 07 14:07:06 CET 2016]; root of context hierarchy
+[                          main] DefaultListableBeanFactory     INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@747d1932: defining beans [props,c01-jmsConnectionFactory,c01-pooledConnectionFactory,c01-jmsConfig,c01-activemq,c02-jmsConnectionFactory,c02-pooledConnectionFactory,c02-jmsConfig,c02-activemq,s01-jmsConnectionFactory,s01-pooledConnectionFactory,s01-jmsConfig,s01-activemq,aliveLoggerStarter,template,consumerTemplate,amq-broker-network:beanPostProcessor,amq-broker-network]; root of factory hierarchy
+[                          main] TestAMQNetwork                 INFO  Deleting data store folder ...
+[                          main] TestAMQNetwork                 INFO  ********************************************************************************
+[                          main] TestAMQNetwork                 INFO  Testing: nominalSend1000Msg(com.redhat.empowered.TestAMQNetwork)
+[                          main] TestAMQNetwork                 INFO  ********************************************************************************
+[                          main] ClassPathXmlApplicationContext INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5292ceca: startup date [Wed Dec 07 14:07:33 CET 2016]; root of context hierarchy
+[                          main] XmlBeanDefinitionReader        INFO  Loading XML bean definitions from class path resource [META-INF/spring/camel-context.xml]
+[                          main] DefaultListableBeanFactory     INFO  Overriding bean definition for bean 'aliveLoggerStarter': replacing [Generic bean: class [org.apache.camel.spring.CamelEndpointFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelEndpointFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+[                          main] ePropertyPlaceholderConfigurer INFO  Loading properties file from class path resource [app.properties]
+[                          main] ePropertyPlaceholderConfigurer INFO  Loading properties file from URL [file:app.properties]
+[                          main] ePropertyPlaceholderConfigurer WARN  Could not load properties from URL [file:app.properties]: app.properties (No such file or directory)
+[                          main] ePropertyPlaceholderConfigurer INFO  Loading properties file from URL [file:${karaf.home}/etc/app.properties]
+[                          main] ePropertyPlaceholderConfigurer WARN  Could not load properties from URL [file:${karaf.home}/etc/app.properties]: ${karaf.home}/etc/app.properties (No such file or directory)
+[                          main] ePropertyPlaceholderConfigurer INFO  Loading properties file from URL [file:etc/app.properties]
+[                          main] ePropertyPlaceholderConfigurer WARN  Could not load properties from URL [file:etc/app.properties]: etc/app.properties (No such file or directory)
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6cbd0674: defining beans [props,c01-jmsConnectionFactory,c01-pooledConnectionFactory,c01-jmsConfig,c01-activemq,c02-jmsConnectionFactory,c02-pooledConnectionFactory,c02-jmsConfig,c02-activemq,s01-jmsConnectionFactory,s01-pooledConnectionFactory,s01-jmsConfig,s01-activemq,aliveLoggerStarter,template,consumerTemplate,amq-broker-network:beanPostProcessor,amq-broker-network]; root of factory hierarchy
+[                          main] CamelContextFactoryBean        INFO  Bridging Camel and Spring property placeholder configurer with id: props
+[                          main] DefaultTypeConverter           INFO  Loaded 215 type converters
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) is starting
+[                          main] DefaultManagementStrategy      INFO  JMX is disabled
+[                          main] SpringCamelContext             INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+[                          main] SpringCamelContext             INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+[                          main] SpringCamelContext             INFO  Route: aliveLoggerRoute started and consuming from: Endpoint[timer://foo?period=20000]
+[                          main] SpringCamelContext             INFO  Total 1 routes, of which 1 are started.
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) started in 0.004 seconds
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@7c847072: startup date [Wed Dec 07 14:07:33 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c01-master.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@f4a3a8d: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@68ac9ec5: startup date [Wed Dec 07 14:07:33 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c02-master.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@625a4ff: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@4f0cab0a: startup date [Wed Dec 07 14:07:33 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c01-slave.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5e922647: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@7c72ecc: startup date [Wed Dec 07 14:07:34 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c02-slave.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@22c75c01: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@4b31a708: startup date [Wed Dec 07 14:07:34 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-s01.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@7cca01a8: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] BrokerService                  INFO  Using Persistence Adapter: KahaDBPersistenceAdapter[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c01-store/kahadb]
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c01-store/amq-c01-master/tmp_storage] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) is starting
+[                          main] TransportServerThreadSupport   INFO  Listening for connections at: tcp://localhost:61620
+[                          main] TransportConnector             INFO  Connector clients started
+[                          main] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c01-master?async=false&create=false to failover:(tcp://localhost:61622,tcp://localhost:61623)?randomize=false&maxReconnectAttempts=0
+[                          main] TransportConnector             INFO  Connector vm://amq-c01-master started
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral:BrokerService[amq-c01-master] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) started
+[                          main] BrokerService                  INFO  For help or more information please see: http://activemq.apache.org
+[                          main] BrokerService                  INFO  Using Persistence Adapter: KahaDBPersistenceAdapter[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c02-store/kahadb]
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61622, tcp://localhost:61623] after: 1 attempt(s)
+[Broker= vm://amq-c01-master#44] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c01-master#44 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[Service[amq-c01-master] Task-2] TransportConnector             INFO  Connector vm://amq-c01-master stopped
+[Service[amq-c01-master] Task-2] DemandForwardingBridgeSupport  INFO  amq-c01-master bridge to Unknown stopped
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c02-store/amq-c02-master/tmp_storage] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) is starting
+[                          main] TransportServerThreadSupport   INFO  Listening for connections at: tcp://localhost:61622
+[                          main] TransportConnector             INFO  Connector clients started
+[                          main] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c02-master?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[                          main] TransportConnector             INFO  Connector vm://amq-c02-master started
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral:BrokerService[amq-c02-master] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) started
+[                          main] BrokerService                  INFO  For help or more information please see: http://activemq.apache.org
+[                          main] BrokerService                  INFO  Using Persistence Adapter: KahaDBPersistenceAdapter[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-s01-store/kahadb]
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61620
+[Broker= vm://amq-c02-master#46] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c02-master#46 and tcp://localhost:61620 (amq-c01-master) has been established.
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-s01-store/amq-s01/tmp_storage] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) is starting
+[                          main] TransportServerThreadSupport   INFO  Listening for connections at: tcp://localhost:61624
+[                          main] TransportConnector             INFO  Connector clients started
+[                          main] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[                          main] TransportConnector             INFO  Connector vm://amq-s01 started
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral01:BrokerService[amq-s01] started
+[                          main] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61622,tcp://localhost:61623)?randomize=false&maxReconnectAttempts=0
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral02:BrokerService[amq-s01] started
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61620
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) started
+[                          main] BrokerService                  INFO  For help or more information please see: http://activemq.apache.org
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61622
+[, localBroker= vm://amq-s01#50] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#50 and tcp://localhost:61622 (amq-c02-master) has been established.
+[, localBroker= vm://amq-s01#48] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#48 and tcp://localhost:61620 (amq-c01-master) has been established.
+[twork) thread #8 - timer://foo] aliveLoggerRoute               INFO  Hello I'm alive..
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c01-master?async=false&create=false to failover:(tcp://localhost:61622,tcp://localhost:61623)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] TransportConnector             INFO  Connector vm://amq-c01-master started
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61622
+[Broker= vm://amq-c01-master#52] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c01-master#52 and tcp://localhost:61622 (amq-c02-master) has been established.
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61620
+[: tcp:///127.0.0.1:57886@61620] Transport                      WARN  Transport Connection to: tcp://127.0.0.1:57886 failed: java.io.EOFException
+[               ActiveMQ Task-2] FailoverTransport              INFO  Successfully reconnected to tcp://localhost:61622
+[                          main] SpringCamelContext             INFO  Route: route5 started and consuming from: Endpoint[c01-activemq://queue:sensor.events]
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61620
+[                          main] SpringCamelContext             INFO  Route: route6 started and consuming from: Endpoint[c02-activemq://queue:sensor.events]
+[                          main] TestAMQNetwork                 INFO  Start Sending 1000 messages
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-s01 : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-50:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-52:1
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-c01-master : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-52:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-50:1
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-c02-master : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-50:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-52:1
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61624
+[twork) thread #8 - timer://foo] aliveLoggerRoute               INFO  Hello I'm alive..
+[                          main] TestAMQNetwork                 INFO  ############### nominalSend1000Msg #########################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  Received on collector01 500
+[                          main] TestAMQNetwork                 INFO  Received on collector02 500
+[                          main] TestAMQNetwork                 INFO  Total received 1000
+[                          main] TestAMQNetwork                 INFO  amqs01 enqueue 1000
+[                          main] TestAMQNetwork                 INFO  amqs01 dequeue 1000
+[                          main] TestAMQNetwork                 INFO  amqs01 dispatch 1000
+[                          main] TestAMQNetwork                 INFO  amqc01master enqueue 501
+[                          main] TestAMQNetwork                 INFO  amqc01master dequeue 501
+[                          main] TestAMQNetwork                 INFO  amqc01master dispatch 501
+[                          main] TestAMQNetwork                 INFO  amqc02master enqueue 501
+[                          main] TestAMQNetwork                 INFO  amqc02master dequeue 501
+[                          main] TestAMQNetwork                 INFO  amqc02master dispatch 501
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) is shutting down
+[: tcp:///127.0.0.1:37562@61622] Transport                      WARN  Transport Connection to: tcp://127.0.0.1:37562 failed: java.io.EOFException
+[                          main] Transport                      WARN  Transport Connection to: vm://amq-c01-master#52 failed: org.apache.activemq.transport.TransportDisposedIOException: peer (vm://amq-c01-master#52) stopped.
+[                          main] TransportConnector             INFO  Connector vm://amq-c01-master stopped
+[                          main] DemandForwardingBridgeSupport  INFO  amq-c01-master bridge to amq-c02-master stopped
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral:BrokerService[amq-c01-master] stopped
+[: tcp:///127.0.0.1:57864@61620] Transport                      WARN  Transport Connection to: tcp://127.0.0.1:57864 failed: java.io.IOException: Unexpected error occurred: org.apache.activemq.broker.BrokerStoppedException: Broker BrokerService[amq-c01-master] is being stopped
+[ocalhost/127.0.0.1:61620@57864] FailoverTransport              WARN  Transport (tcp://localhost:61620) failed , not attempting to automatically reconnect: java.io.EOFException
+[ocalhost/127.0.0.1:61620@57862] FailoverTransport              WARN  Transport (tcp://localhost:61620) failed , not attempting to automatically reconnect: java.io.EOFException
+[ocalhost/127.0.0.1:61620@57862] DemandForwardingBridgeSupport  WARN  Network connection between vm://amq-c02-master#46 and unconnected shutdown due to a remote error: java.io.EOFException
+[ocalhost/127.0.0.1:61620@57864] DemandForwardingBridgeSupport  WARN  Network connection between vm://amq-s01#48 and unconnected shutdown due to a remote error: java.io.EOFException
+[ocalhost/127.0.0.1:61620@57890] FailoverTransport              WARN  Transport (tcp://localhost:61620) failed , attempting to automatically reconnect: java.io.EOFException
+[Service[amq-c02-master] Task-1] TransportConnector             INFO  Connector vm://amq-c02-master stopped
+[Service[amq-c02-master] Task-1] DemandForwardingBridgeSupport  INFO  amq-c02-master bridge to amq-c01-master stopped
+[ BrokerService[amq-s01] Task-3] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to amq-c01-master stopped
+[                          main] TransportConnector             INFO  Connector clients stopped
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c01-store/amq-c01-master/tmp_storage] stopped
+[                          main] KahaDBStore                    INFO  Stopping async queue tasks
+[                          main] KahaDBStore                    INFO  Stopping async topic tasks
+[                          main] KahaDBStore                    INFO  Stopped KahaDB
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully reconnected to tcp://localhost:61622
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) uptime 25.217 seconds
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) is shutdown
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) is shutting down
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral:BrokerService[amq-c02-master] stopped
+[ocalhost/127.0.0.1:61622@37560] FailoverTransport              WARN  Transport (tcp://localhost:61622) failed , not attempting to automatically reconnect: java.io.EOFException
+[ocalhost/127.0.0.1:61622@37560] DemandForwardingBridgeSupport  WARN  Network connection between vm://amq-s01#50 and unconnected shutdown due to a remote error: java.io.EOFException
+[ocalhost/127.0.0.1:61622@37582] FailoverTransport              WARN  Transport (tcp://localhost:61622) failed , attempting to automatically reconnect: java.io.EOFException
+[ BrokerService[amq-s01] Task-3] TransportConnector             INFO  Connector vm://amq-s01 stopped
+[ BrokerService[amq-s01] Task-3] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to amq-c02-master stopped
+[ocalhost/127.0.0.1:61622@37622] FailoverTransport              WARN  Transport (tcp://localhost:61622) failed , attempting to automatically reconnect: java.io.EOFException
+[                          main] TransportConnector             INFO  Connector clients stopped
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c02-store/amq-c02-master/tmp_storage] stopped
+[                          main] KahaDBStore                    INFO  Stopping async queue tasks
+[                          main] KahaDBStore                    INFO  Stopping async topic tasks
+[                          main] KahaDBStore                    INFO  Stopped KahaDB
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) uptime 25.079 seconds
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) is shutdown
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) is shutting down
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral01:BrokerService[amq-s01] stopped
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral02:BrokerService[amq-s01] stopped
+[ocalhost/127.0.0.1:61624@32920] FailoverTransport              WARN  Transport (tcp://localhost:61624) failed , attempting to automatically reconnect: java.io.EOFException
+[                          main] TransportConnector             INFO  Connector clients stopped
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-s01-store/amq-s01/tmp_storage] stopped
+[                          main] KahaDBStore                    INFO  Stopping async queue tasks
+[                          main] KahaDBStore                    INFO  Stopping async topic tasks
+[                          main] KahaDBStore                    INFO  Stopped KahaDB
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) uptime 24.935 seconds
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) is shutdown
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://collector01] is satisfied
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://collector02] is satisfied
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://totalCollector] is satisfied
+[                          main] TestAMQNetwork                 INFO  ********************************************************************************
+[                          main] TestAMQNetwork                 INFO  Testing done: nominalSend1000Msg(com.redhat.empowered.TestAMQNetwork)
+[                          main] TestAMQNetwork                 INFO  Took: 25.547 seconds (25547 millis)
+[                          main] TestAMQNetwork                 INFO  ********************************************************************************
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) is shutting down
+[                          main] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 3 routes (timeout 10 seconds)
+[ork) thread #11 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: aliveLoggerRoute shutdown complete, was consuming from: Endpoint[timer://foo?period=20000]
+[ork) thread #11 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route6 shutdown complete, was consuming from: Endpoint[c02-activemq://queue:sensor.events]
+[ork) thread #11 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route5 shutdown complete, was consuming from: Endpoint[c01-activemq://queue:sensor.events]
+[                          main] DefaultShutdownStrategy        INFO  Graceful shutdown of 3 routes completed in 0 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) uptime 26.380 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) is shutdown in 0.828 seconds
+[                          main] ClassPathXmlApplicationContext INFO  Closing org.springframework.context.support.ClassPathXmlApplicationContext@5292ceca: startup date [Wed Dec 07 14:07:33 CET 2016]; root of context hierarchy
+[                          main] DefaultListableBeanFactory     INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6cbd0674: defining beans [props,c01-jmsConnectionFactory,c01-pooledConnectionFactory,c01-jmsConfig,c01-activemq,c02-jmsConnectionFactory,c02-pooledConnectionFactory,c02-jmsConfig,c02-activemq,s01-jmsConnectionFactory,s01-pooledConnectionFactory,s01-jmsConfig,s01-activemq,aliveLoggerStarter,template,consumerTemplate,amq-broker-network:beanPostProcessor,amq-broker-network]; root of factory hierarchy
+[                          main] TestAMQNetwork                 INFO  Deleting data store folder ...
+[                          main] TestAMQNetwork                 INFO  ********************************************************************************
+[                          main] TestAMQNetwork                 INFO  Testing: scaleUp(com.redhat.empowered.TestAMQNetwork)
+[                          main] TestAMQNetwork                 INFO  ********************************************************************************
+[                          main] ClassPathXmlApplicationContext INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6749fe50: startup date [Wed Dec 07 14:08:00 CET 2016]; root of context hierarchy
+[                          main] XmlBeanDefinitionReader        INFO  Loading XML bean definitions from class path resource [META-INF/spring/camel-context.xml]
+[                          main] DefaultListableBeanFactory     INFO  Overriding bean definition for bean 'aliveLoggerStarter': replacing [Generic bean: class [org.apache.camel.spring.CamelEndpointFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelEndpointFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+[                          main] ePropertyPlaceholderConfigurer INFO  Loading properties file from class path resource [app.properties]
+[                          main] ePropertyPlaceholderConfigurer INFO  Loading properties file from URL [file:app.properties]
+[                          main] ePropertyPlaceholderConfigurer WARN  Could not load properties from URL [file:app.properties]: app.properties (No such file or directory)
+[                          main] ePropertyPlaceholderConfigurer INFO  Loading properties file from URL [file:${karaf.home}/etc/app.properties]
+[                          main] ePropertyPlaceholderConfigurer WARN  Could not load properties from URL [file:${karaf.home}/etc/app.properties]: ${karaf.home}/etc/app.properties (No such file or directory)
+[                          main] ePropertyPlaceholderConfigurer INFO  Loading properties file from URL [file:etc/app.properties]
+[                          main] ePropertyPlaceholderConfigurer WARN  Could not load properties from URL [file:etc/app.properties]: etc/app.properties (No such file or directory)
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@43c57161: defining beans [props,c01-jmsConnectionFactory,c01-pooledConnectionFactory,c01-jmsConfig,c01-activemq,c02-jmsConnectionFactory,c02-pooledConnectionFactory,c02-jmsConfig,c02-activemq,s01-jmsConnectionFactory,s01-pooledConnectionFactory,s01-jmsConfig,s01-activemq,aliveLoggerStarter,template,consumerTemplate,amq-broker-network:beanPostProcessor,amq-broker-network]; root of factory hierarchy
+[                          main] CamelContextFactoryBean        INFO  Bridging Camel and Spring property placeholder configurer with id: props
+[                          main] DefaultTypeConverter           INFO  Loaded 215 type converters
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) is starting
+[                          main] DefaultManagementStrategy      INFO  JMX is disabled
+[                          main] SpringCamelContext             INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+[                          main] SpringCamelContext             INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+[                          main] SpringCamelContext             INFO  Route: aliveLoggerRoute started and consuming from: Endpoint[timer://foo?period=20000]
+[                          main] SpringCamelContext             INFO  Total 1 routes, of which 1 are started.
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) started in 0.004 seconds
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@29c17c3d: startup date [Wed Dec 07 14:08:00 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c01-master.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2582b0ef: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@2abbd0d9: startup date [Wed Dec 07 14:08:00 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c02-master.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2d119405: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@a6c54c3: startup date [Wed Dec 07 14:08:00 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c01-slave.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@51bddd98: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@68c9e023: startup date [Wed Dec 07 14:08:00 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c02-slave.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@43ac0a68: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@481558ce: startup date [Wed Dec 07 14:08:00 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-s01.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2a02e34b: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] BrokerService                  INFO  Using Persistence Adapter: KahaDBPersistenceAdapter[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c02-store/kahadb]
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c02-store/amq-c02-master/tmp_storage] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) is starting
+[                          main] TransportServerThreadSupport   INFO  Listening for connections at: tcp://localhost:61622
+[                          main] TransportConnector             INFO  Connector clients started
+[                          main] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c02-master?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[                          main] TransportConnector             INFO  Connector vm://amq-c02-master started
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral:BrokerService[amq-c02-master] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) started
+[                          main] BrokerService                  INFO  For help or more information please see: http://activemq.apache.org
+[                          main] BrokerService                  INFO  Using Persistence Adapter: KahaDBPersistenceAdapter[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-s01-store/kahadb]
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[Broker= vm://amq-c02-master#54] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c02-master#54 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[Service[amq-c02-master] Task-2] TransportConnector             INFO  Connector vm://amq-c02-master stopped
+[Service[amq-c02-master] Task-2] DemandForwardingBridgeSupport  INFO  amq-c02-master bridge to Unknown stopped
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-s01-store/amq-s01/tmp_storage] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) is starting
+[                          main] TransportServerThreadSupport   INFO  Listening for connections at: tcp://localhost:61624
+[                          main] TransportConnector             INFO  Connector clients started
+[                          main] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[                          main] TransportConnector             INFO  Connector vm://amq-s01 started
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral01:BrokerService[amq-s01] started
+[                          main] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61622,tcp://localhost:61623)?randomize=false&maxReconnectAttempts=0
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral02:BrokerService[amq-s01] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) started
+[                          main] BrokerService                  INFO  For help or more information please see: http://activemq.apache.org
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61622
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[, localBroker= vm://amq-s01#56] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#56 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[ BrokerService[amq-s01] Task-2] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to Unknown stopped
+[, localBroker= vm://amq-s01#58] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#58 and tcp://localhost:61622 (amq-c02-master) has been established.
+[work) thread #12 - timer://foo] aliveLoggerRoute               INFO  Hello I'm alive..
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c02-master?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] TransportConnector             INFO  Connector vm://amq-c02-master started
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[Broker= vm://amq-c02-master#60] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c02-master#60 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[Service[amq-c02-master] Task-4] TransportConnector             INFO  Connector vm://amq-c02-master stopped
+[Service[amq-c02-master] Task-4] DemandForwardingBridgeSupport  INFO  amq-c02-master bridge to Unknown stopped
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[, localBroker= vm://amq-s01#62] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#62 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[ BrokerService[amq-s01] Task-1] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to Unknown stopped
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c02-master?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] TransportConnector             INFO  Connector vm://amq-c02-master started
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[Broker= vm://amq-c02-master#64] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c02-master#64 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[Service[amq-c02-master] Task-2] TransportConnector             INFO  Connector vm://amq-c02-master stopped
+[Service[amq-c02-master] Task-2] DemandForwardingBridgeSupport  INFO  amq-c02-master bridge to Unknown stopped
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61622
+[                          main] SpringCamelContext             INFO  Route: route7 started and consuming from: Endpoint[c01-activemq://queue:sensor.events]
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[, localBroker= vm://amq-s01#66] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#66 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[ BrokerService[amq-s01] Task-1] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to Unknown stopped
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61622
+[                          main] SpringCamelContext             INFO  Route: route8 started and consuming from: Endpoint[c02-activemq://queue:sensor.events]
+[                          main] TestAMQNetwork                 INFO  Start Sending 1000 messages
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c02-master?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] TransportConnector             INFO  Connector vm://amq-c02-master started
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[Broker= vm://amq-c02-master#68] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c02-master#68 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[Service[amq-c02-master] Task-2] TransportConnector             INFO  Connector vm://amq-c02-master stopped
+[Service[amq-c02-master] Task-2] DemandForwardingBridgeSupport  INFO  amq-c02-master bridge to Unknown stopped
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] FailoverTransport              ERROR Failed to connect to [tcp://localhost:61620, tcp://localhost:61621] after: 1 attempt(s)
+[, localBroker= vm://amq-s01#70] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#70 and unconnected shutdown due to a local error: java.lang.Throwable: remoteBrokerInfo is null
+[ BrokerService[amq-s01] Task-2] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to Unknown stopped
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-s01 : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-63:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-66:1
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-c02-master : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-63:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-66:1
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61624
+[                          main] XBeanBrokerFactory$1           INFO  Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@7d42542: startup date [Wed Dec 07 14:08:15 CET 2016]; root of context hierarchy
+[                          main] XBeanXmlBeanDefinitionReader   INFO  Loading XML bean definitions from class path resource [amq/amq-c01-master.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@61ffd148: defining beans [org.apache.activemq.xbean.XBeanBrokerService#0]; root of factory hierarchy
+[                          main] BrokerService                  INFO  Using Persistence Adapter: KahaDBPersistenceAdapter[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c01-store/kahadb]
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c01-store/amq-c01-master/tmp_storage] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) is starting
+[                          main] TransportServerThreadSupport   INFO  Listening for connections at: tcp://localhost:61620
+[                          main] TransportConnector             INFO  Connector clients started
+[                          main] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c01-master?async=false&create=false to failover:(tcp://localhost:61622,tcp://localhost:61623)?randomize=false&maxReconnectAttempts=0
+[                          main] TransportConnector             INFO  Connector vm://amq-c01-master started
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral:BrokerService[amq-c01-master] started
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) started
+[                          main] BrokerService                  INFO  For help or more information please see: http://activemq.apache.org
+[                          main] TestAMQNetwork                 INFO  ############### waiting for instance to start #########################
+[                          main] TestAMQNetwork                 INFO  ############### before scaleUp #########################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61622
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  Received on collector01 250
+[                          main] TestAMQNetwork                 INFO  Received on collector02 250
+[                          main] TestAMQNetwork                 INFO  Total received 500
+[                          main] TestAMQNetwork                 INFO  amqs01 enqueue 500
+[                          main] TestAMQNetwork                 INFO  amqs01 dequeue 500
+[                          main] TestAMQNetwork                 INFO  amqs01 dispatch 500
+[                          main] TestAMQNetwork                 INFO  amqc01master enqueue 0
+[                          main] TestAMQNetwork                 INFO  amqc01master dequeue 0
+[                          main] TestAMQNetwork                 INFO  amqc01master dispatch 0
+[                          main] TestAMQNetwork                 INFO  amqc02master enqueue 500
+[                          main] TestAMQNetwork                 INFO  amqc02master dequeue 500
+[                          main] TestAMQNetwork                 INFO  amqc02master dispatch 500
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  ############### waiting a bit longer to redistribute connections #########################
+[Broker= vm://amq-c01-master#72] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c01-master#72 and tcp://localhost:61622 (amq-c02-master) has been established.
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-c02-master?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] TransportConnector             INFO  Connector vm://amq-c02-master started
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61620
+[Broker= vm://amq-c02-master#74] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-c02-master#74 and tcp://localhost:61620 (amq-c01-master) has been established.
+[: tcp:///127.0.0.1:37766@61622] Transport                      WARN  Transport Connection to: tcp://127.0.0.1:37766 failed: java.io.EOFException
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully reconnected to tcp://localhost:61620
+[               ActiveMQ Task-1] DiscoveryNetworkConnector      INFO  Establishing network connection from vm://amq-s01?async=false&create=false to failover:(tcp://localhost:61620,tcp://localhost:61621)?randomize=false&maxReconnectAttempts=0
+[               ActiveMQ Task-1] FailoverTransport              INFO  Successfully connected to tcp://localhost:61620
+[, localBroker= vm://amq-s01#76] DemandForwardingBridgeSupport  INFO  Network connection between vm://amq-s01#76 and tcp://localhost:61620 (amq-c01-master) has been established.
+[work) thread #12 - timer://foo] aliveLoggerRoute               INFO  Hello I'm alive..
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-s01 : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-66:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-63:1
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-c01-master : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-63:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-63:1
+[                          main] TestAMQNetwork                 INFO  Connected consumers on amq-c02-master : 2
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-66:1
+[                          main] TestAMQNetwork                 INFO  Connected consumer : ID:aphamf24-43201-1481115996786-63:1
+[                          main] TestAMQNetwork                 INFO  ############### sending further messages #########################
+[                          main] TestAMQNetwork                 INFO  ############### scaleUp #########################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  Received on collector01 500
+[                          main] TestAMQNetwork                 INFO  Received on collector02 500
+[                          main] TestAMQNetwork                 INFO  Total received 1000
+[                          main] TestAMQNetwork                 INFO  amqs01 enqueue 1000
+[                          main] TestAMQNetwork                 INFO  amqs01 dequeue 1000
+[                          main] TestAMQNetwork                 INFO  amqs01 dispatch 1000
+[                          main] TestAMQNetwork                 INFO  amqc01master enqueue 252
+[                          main] TestAMQNetwork                 INFO  amqc01master dequeue 252
+[                          main] TestAMQNetwork                 INFO  amqc01master dispatch 252
+[                          main] TestAMQNetwork                 INFO  amqc02master enqueue 752
+[                          main] TestAMQNetwork                 INFO  amqc02master dequeue 752
+[                          main] TestAMQNetwork                 INFO  amqc02master dispatch 752
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] TestAMQNetwork                 INFO  ##############################################################
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) is shutting down
+[: tcp:///127.0.0.1:37818@61622] Transport                      WARN  Transport Connection to: tcp://127.0.0.1:37818 failed: java.io.EOFException
+[                          main] Transport                      WARN  Transport Connection to: vm://amq-c01-master#72 failed: org.apache.activemq.transport.TransportDisposedIOException: peer (vm://amq-c01-master#72) stopped.
+[                          main] TransportConnector             INFO  Connector vm://amq-c01-master stopped
+[                          main] DemandForwardingBridgeSupport  INFO  amq-c01-master bridge to amq-c02-master stopped
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral:BrokerService[amq-c01-master] stopped
+[: tcp:///127.0.0.1:58130@61620] Transport                      WARN  Transport Connection to: tcp://127.0.0.1:58130 failed: java.io.IOException: Unexpected error occurred: org.apache.activemq.broker.BrokerStoppedException: Broker BrokerService[amq-c01-master] is being stopped
+[ocalhost/127.0.0.1:61620@58126] FailoverTransport              WARN  Transport (tcp://localhost:61620) failed , not attempting to automatically reconnect: java.io.EOFException
+[ocalhost/127.0.0.1:61620@58126] DemandForwardingBridgeSupport  WARN  Network connection between vm://amq-c02-master#74 and unconnected shutdown due to a remote error: java.io.EOFException
+[ocalhost/127.0.0.1:61620@58130] FailoverTransport              WARN  Transport (tcp://localhost:61620) failed , not attempting to automatically reconnect: java.io.EOFException
+[                          main] TransportConnector             INFO  Connector clients stopped
+[Service[amq-c02-master] Task-2] TransportConnector             INFO  Connector vm://amq-c02-master stopped
+[ocalhost/127.0.0.1:61620@58128] FailoverTransport              WARN  Transport (tcp://localhost:61620) failed , attempting to automatically reconnect: java.io.EOFException
+[Service[amq-c02-master] Task-2] DemandForwardingBridgeSupport  INFO  amq-c02-master bridge to amq-c01-master stopped
+[ocalhost/127.0.0.1:61620@58130] DemandForwardingBridgeSupport  WARN  Network connection between vm://amq-s01#76 and unconnected shutdown due to a remote error: java.io.EOFException
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c01-store/amq-c01-master/tmp_storage] stopped
+[                          main] KahaDBStore                    INFO  Stopping async queue tasks
+[                          main] KahaDBStore                    INFO  Stopping async topic tasks
+[                          main] KahaDBStore                    INFO  Stopped KahaDB
+[ BrokerService[amq-s01] Task-3] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to amq-c01-master stopped
+[               ActiveMQ Task-2] FailoverTransport              INFO  Successfully reconnected to tcp://localhost:61622
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) uptime 25.009 seconds
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c01-master, amq-c01-master) is shutdown
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) is shutting down
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral:BrokerService[amq-c02-master] stopped
+[ocalhost/127.0.0.1:61622@37744] FailoverTransport              WARN  Transport (tcp://localhost:61622) failed , not attempting to automatically reconnect: java.io.EOFException
+[ocalhost/127.0.0.1:61622@37744] DemandForwardingBridgeSupport  WARN  Network connection between vm://amq-s01#58 and unconnected shutdown due to a remote error: java.io.EOFException
+[ocalhost/127.0.0.1:61622@37776] FailoverTransport              WARN  Transport (tcp://localhost:61622) failed , attempting to automatically reconnect: java.io.EOFException
+[ BrokerService[amq-s01] Task-3] TransportConnector             INFO  Connector vm://amq-s01 stopped
+[ BrokerService[amq-s01] Task-3] DemandForwardingBridgeSupport  INFO  amq-s01 bridge to amq-c02-master stopped
+[ocalhost/127.0.0.1:61622@37860] FailoverTransport              WARN  Transport (tcp://localhost:61622) failed , attempting to automatically reconnect: java.io.EOFException
+[                          main] TransportConnector             INFO  Connector clients stopped
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-c02-store/amq-c02-master/tmp_storage] stopped
+[                          main] KahaDBStore                    INFO  Stopping async queue tasks
+[                          main] KahaDBStore                    INFO  Stopping async topic tasks
+[                          main] KahaDBStore                    INFO  Stopped KahaDB
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) uptime 39.902 seconds
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-c02-master, amq-c02-master) is shutdown
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) is shutting down
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral01:BrokerService[amq-s01] stopped
+[                          main] NetworkConnector               INFO  Network Connector DiscoveryNetworkConnector:linkToCentral02:BrokerService[amq-s01] stopped
+[ocalhost/127.0.0.1:61624@33132] FailoverTransport              WARN  Transport (tcp://localhost:61624) failed , attempting to automatically reconnect: java.io.EOFException
+[                          main] TransportConnector             INFO  Connector clients stopped
+[                          main] PListStoreImpl                 INFO  PListStore:[/home/apham/TAZONE/WORKSPACES/redhat.empowered.amqnetwork/amq-broker-network/amq-s01-store/amq-s01/tmp_storage] stopped
+[                          main] KahaDBStore                    INFO  Stopping async queue tasks
+[                          main] KahaDBStore                    INFO  Stopping async topic tasks
+[                          main] KahaDBStore                    INFO  Stopped KahaDB
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) uptime 39.751 seconds
+[                          main] BrokerService                  INFO  Apache ActiveMQ 5.11.0.redhat-630187 (amq-s01, amq-s01) is shutdown
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://collector01] is satisfied
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://collector02] is satisfied
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://totalCollector] is satisfied
+[                          main] TestAMQNetwork                 INFO  ********************************************************************************
+[                          main] TestAMQNetwork                 INFO  Testing done: scaleUp(com.redhat.empowered.TestAMQNetwork)
+[                          main] TestAMQNetwork                 INFO  Took: 40.139 seconds (40139 millis)
+[                          main] TestAMQNetwork                 INFO  ********************************************************************************
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) is shutting down
+[                          main] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 3 routes (timeout 10 seconds)
+[ork) thread #15 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: aliveLoggerRoute shutdown complete, was consuming from: Endpoint[timer://foo?period=20000]
+[ork) thread #15 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route8 shutdown complete, was consuming from: Endpoint[c02-activemq://queue:sensor.events]
+[ork) thread #15 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route7 shutdown complete, was consuming from: Endpoint[c01-activemq://queue:sensor.events]
+[                          main] DefaultShutdownStrategy        INFO  Graceful shutdown of 3 routes completed in 0 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) uptime 40.983 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: amq-broker-network) is shutdown in 0.839 seconds
+[                          main] ClassPathXmlApplicationContext INFO  Closing org.springframework.context.support.ClassPathXmlApplicationContext@6749fe50: startup date [Wed Dec 07 14:08:00 CET 2016]; root of context hierarchy
+[                          main] DefaultListableBeanFactory     INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@43c57161: defining beans [props,c01-jmsConnectionFactory,c01-pooledConnectionFactory,c01-jmsConfig,c01-activemq,c02-jmsConnectionFactory,c02-pooledConnectionFactory,c02-jmsConfig,c02-activemq,s01-jmsConnectionFactory,s01-pooledConnectionFactory,s01-jmsConfig,s01-activemq,aliveLoggerStarter,template,consumerTemplate,amq-broker-network:beanPostProcessor,amq-broker-network]; root of factory hierarchy
+[                          main] TestAMQNetwork                 INFO  Deleting data store folder ...
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 126.759 sec - in com.redhat.empowered.TestAMQNetwork
+
+Results :
+
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:09 min
+[INFO] Finished at: 2016-12-07T14:08:41+01:00
+[INFO] Final Memory: 35M/381M
+[INFO] ------------------------------------------------------------------------
